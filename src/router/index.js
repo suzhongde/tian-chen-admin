@@ -22,7 +22,7 @@ const routes = [
         redirect: 'dashboard',
         children: menuRoutes
     },
-    
+
     {
         path: '/login',
         component: () => import('../pages/Login.vue')
