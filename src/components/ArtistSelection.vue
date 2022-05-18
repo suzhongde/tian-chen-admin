@@ -22,7 +22,7 @@
 
 <script setup>
 import { computed, onMounted, ref } from 'vue';
-import { search } from '../api/artist.js';
+import artistApi from '../api/artist.js';
 const props = defineProps({
   artistList: {
     type: Array,
@@ -52,7 +52,7 @@ const artistOptions = computed(() => {
 const selectedArtist = ref(null);
 const lastSearch = ref('');
 onMounted(() => {
-  search({ name: '' }).then(res => {
+  artistApi.search({ name: '' }).then(res => {
     artists.value = res.content;
   });
 });
